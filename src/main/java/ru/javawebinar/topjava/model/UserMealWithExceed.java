@@ -1,6 +1,7 @@
 package ru.javawebinar.topjava.model;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * GKislin
@@ -20,5 +21,11 @@ public class UserMealWithExceed {
         this.description = description;
         this.calories = calories;
         this.exceed = exceed;
+    }
+
+    @Override
+    public String toString() {
+        return (dateTime.format(DateTimeFormatter.ISO_LOCAL_DATE) +", " + description
+                + ", " + calories + ", " + exceed );
     }
 }
