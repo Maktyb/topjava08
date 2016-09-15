@@ -1,6 +1,7 @@
 package ru.javawebinar.topjava.model;
 
 import java.time.LocalDateTime;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * GKislin
@@ -15,11 +16,18 @@ public class MealWithExceed {
 
     private  boolean exceed;
 
-    public MealWithExceed(LocalDateTime dateTime, String description, int calories, boolean exceed) {
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public MealWithExceed(int id, LocalDateTime dateTime, String description, int calories, boolean exceed) {
         this.dateTime = dateTime;
         this.description = description;
         this.calories = calories;
         this.exceed = exceed;
+        this.id = id;
     }
 
     public LocalDateTime getDateTime() {
@@ -45,6 +53,7 @@ public class MealWithExceed {
                 ", description='" + description + '\'' +
                 ", calories=" + calories +
                 ", exceed=" + exceed +
+               ", id =" + id  +
                 '}';
     }
 }
